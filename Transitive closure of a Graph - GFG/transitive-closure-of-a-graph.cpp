@@ -16,20 +16,20 @@ public:
         for(int i=0; i<N; i++){
             for(int j=0; j<N; j++){
                 if(i==j)
-                    res[i][j] = 1;
+                    graph[i][j] = 1;
             }
         }
         for(int k=0; k<N; k++){
             for(int i=0; i<N; i++){
                 for(int j=0; j<N; j++){
-                    if(res[i][j] == 0){
-                        if(res[i][k] && res[k][j])
-                            res[i][j] = 1;
+                    if(graph[i][j] == 0){
+                        if(graph[i][k] && graph[k][j])
+                            graph[i][j] = 1;
                     }
                 }
             }
         }
-        return res;
+        return graph;
     }
 };
 
